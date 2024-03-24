@@ -28,11 +28,11 @@ For a better visualization, we can show the bit Plans. The idea is to reset the 
 
 | Plan 0     | Plan 1       | Plan 2       | Plan 3       |
 |:----------:|:------------:|:------------:|:------------:|
-| ![Plan 0](./assets/output/Plan-0-sushi-and-biel.png)| ![Plan 1](./assets/output/Plan-1-sushi-and-biel.png)| ![Plan 2](./assets/output/Plan-2-sushi-and-biel.png)| ![Plan 3](./assets/output/Plan-3-sushi-and-biel.png)|
+| ![Plan 0](./assets/output/plan-0-sushi-and-biel.png)| ![Plan 1](./assets/output/plan-1-sushi-and-biel.png)| ![Plan 2](./assets/output/plan-2-sushi-and-biel.png)| ![Plan 3](./assets/output/plan-3-sushi-and-biel.png)|
 
 | Plan 4     | Plan 5       | Plan 6       | Plan 7       |
 |:----------:|:------------:|:------------:|:------------:|
-| ![Plan 4](./assets/output/Plan-4-sushi-and-biel.png)| ![Plan 5](./assets/output/Plan-5-sushi-and-biel.png)| ![Plan 6](./assets/output/Plan-6-sushi-and-biel.png)| ![Plan 7](./assets/output/Plan-7-sushi-and-biel.png)|
+| ![Plan 4](./assets/output/plan-4-sushi-and-biel.png)| ![Plan 5](./assets/output/plan-5-sushi-and-biel.png)| ![Plan 6](./assets/output/plan-6-sushi-and-biel.png)| ![Plan 7](./assets/output/plan-7-sushi-and-biel.png)|
 
 As a challenge, we were given an image whose least significant bits already represented another image. The goal was to find out which one it was. Below is the given image (left) and the image we revealed by the algorithm (right) hidden in it.
 
