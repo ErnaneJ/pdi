@@ -24,7 +24,7 @@ After carrying out the process, we have the 'coded' image, that is, the image re
 |:----------:|:------------:|
 |![Encode](./assets/output/encode-steganography.png)|![Hidden image](./assets/output/decode-steganography.png)|
 
-For a better visualization, we can show the bit Plans. The idea is to reset the most significant bits of the 'encoded' image and move the least significant bits to the left by 'n' positions, revealing the hidden image. The factor 'n' being the amount of bits removed from the main image.
+For a better visualization, we can show the bit plans. The idea is to reset the most significant bits of the 'encoded' image and move the least significant bits to the left by 'n' positions, revealing the hidden image. The factor 'n' being the amount of bits removed from the main image.
 
 | Plan 0     | Plan 1       | Plan 2       | Plan 3       |
 |:----------:|:------------:|:------------:|:------------:|
