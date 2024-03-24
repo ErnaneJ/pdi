@@ -58,17 +58,11 @@ void encode()
       carrierVal = carrierImage.at<cv::Vec3b>(i, j);
       hiddenVal = hiddenImage.at<cv::Vec3b>(i, j);
 
-      carrierVal[0] = carrierVal[0] >> N_BITS << N_BITS;
-      carrierVal[1] = carrierVal[1] >> N_BITS << N_BITS;
-      carrierVal[2] = carrierVal[2] >> N_BITS << N_BITS;
-
-      hiddenVal[0] = hiddenVal[0] >> (8 - N_BITS);
-      hiddenVal[1] = hiddenVal[1] >> (8 - N_BITS);
-      hiddenVal[2] = hiddenVal[2] >> (8 - N_BITS);
-
-      finalVal[0] = carrierVal[0] | hiddenVal[0];
-      finalVal[1] = carrierVal[1] | hiddenVal[1];
-      finalVal[2] = carrierVal[2] | hiddenVal[2];
+      for(int colorComponent = 0; colorComponent < 3; colorComponent++){
+        carrierVal[colorComponent] = carrierVal[colorComponent] >> N_BITS << N_BITS;
+        hiddenVal[colorComponent] = hiddenVal[colorComponent] >> (8 - N_BITS);
+        finalVal[colorComponent] = carrierVal[colorComponent] | hiddenVal[colorComponent];
+      }
 
       finalImage.at<cv::Vec3b>(i, j) = finalVal;
     }
@@ -231,7 +225,7 @@ int main(int argc, char **argv)
               << std::endl;
     return 0;
   default:
-    std::cout << "\n❌ Invalid option. Please try again. 👇🏼\n"
+    std::cout << "\n❌ Invalid option. Please try again. 👇🏼"
               << std::endl;
   }
 
