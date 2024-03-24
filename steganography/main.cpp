@@ -227,10 +227,12 @@ int main(int argc, char **argv)
     bitPlane();
     break;
   case 4:
-    std::cout << "\nGoodbye! 👋\n" << std::endl;
+    std::cout << "\nGoodbye! 👋\n"
+              << std::endl;
     return 0;
   default:
-    std::cout << "\n❌ Invalid option. Please try again. 👇🏼\n" << std::endl;
+    std::cout << "\n❌ Invalid option. Please try again. 👇🏼\n"
+              << std::endl;
   }
 
   main(argc, argv);
