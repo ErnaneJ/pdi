@@ -1,3 +1,7 @@
+/**
+ * @file steganography.cpp
+ * @brief Implementation of steganography algorithms to encode and decode hidden information within images.
+ */
 
 #include <iostream>
 #include <string>
@@ -5,6 +9,10 @@
 
 #define N_BITS 3
 #define OUTPUT_PATH "./assets/output/"
+
+/**
+ * @brief Encodes a hidden image into a carrier image using steganography.
+ */
 void encode()
 {
   std::cout << "\n-------------------------------------------------------\n"
@@ -76,6 +84,9 @@ void encode()
   std::cout << "\n-------------------------------------------------------" << std::endl;
 }
 
+/**
+ * @brief Decodes a hidden image from an encoded image using steganography.
+ */
 void decode()
 {
   cv::Mat hiddenImage, finalImage;
@@ -124,6 +135,9 @@ void decode()
   std::cout << "\n-------------------------------------------------------" << std::endl;
 }
 
+/**
+ * @brief Separates the bit planes of an image for visualization.
+ */
 void bitPlane()
 {
   cv::Mat finalImage, totalImage, images[8];
@@ -182,6 +196,13 @@ void bitPlane()
   std::cout << "\n-------------------------------------------------------" << std::endl;
 }
 
+/**
+ * @brief Main function to run the steganography program.
+ *
+ * @param argc Number of command-line arguments.
+ * @param argv Array of command-line arguments.
+ * @return int Exit status.
+ */
 int main(int argc, char **argv)
 {
   int menuOption;
@@ -196,20 +217,20 @@ int main(int argc, char **argv)
 
   switch (menuOption)
   {
-  case 1: // Encode image
+  case 1:
     encode();
     break;
-  case 2: // Decode image
+  case 2:
     decode();
     break;
-  case 3: // Bit plane
+  case 3:
     bitPlane();
     break;
-  case 4: // Exit
-    std::cout << "\nGoodbye! 👋" << std::endl;
+  case 4:
+    std::cout << "\nGoodbye! 👋\n" << std::endl;
     return 0;
   default:
-    std::cout << "\n❌ Invalid option. Please try again. 👇🏼" << std::endl;
+    std::cout << "\n❌ Invalid option. Please try again. 👇🏼\n" << std::endl;
   }
 
   main(argc, argv);
