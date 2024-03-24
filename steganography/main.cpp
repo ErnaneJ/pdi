@@ -97,6 +97,8 @@ void decode()
     exit(-1);
   }
 
+  std::cout << "\n✅ Image loaded successfully!" << std::endl;
+
   hiddenImage = finalImage.clone();
 
   for (int i = 0; i < finalImage.rows; i++)
@@ -148,7 +150,7 @@ void bitPlane()
   std::cout << "\n🚀 Separating bit planes....." << std::endl;
   std::cout << "\nℹ️  The image will be displayed in 8 windows, each one showing a different bit plane." << std::endl;
 
-  std::cout << "\n🖼️ Showing plans from LSB to MSB.\n"
+  std::cout << "\n🖼️  Showing plans from LSB to MSB.\n"
             << std::endl;
   for (int plane = 0; plane < 8; plane++)
   {
@@ -169,39 +171,13 @@ void bitPlane()
         images[plane].at<cv::Vec3b>(i, j) = finalVal;
       }
     }
-    cv::imshow("Plane " + std::to_string(plane) + " displayed. From LSB to MSB", images[plane]);
-    std::cout << "ℹ️ Plane " << plane << " displayed. Press any key to continue." << std::endl;
+    cv::imshow("Plane " + std::to_string(plane) + " displayed", images[plane]);
+    std::cout << "ℹ️  Plane " << plane << " displayed. Press any key to continue." << std::endl;
     cv::waitKey(0);
     cv::destroyAllWindows();
   }
 
-  std::cout << "\nℹ️ Finished displaying from LSB to MSB." << std::endl;
-  std::cout << "\n🖼️ Showing decomposition from MSB to LSB.\n"
-            << std::endl;
-
-  for (int plane = 0; plane < 8; plane++)
-  {
-    images[plane] = finalImage.clone();
-    for (int i = 0; i < images[plane].rows; i++)
-    {
-      for (int j = 0; j < images[plane].cols; j++)
-      {
-        finalVal = images[plane].at<cv::Vec3b>(i, j);
-        finalVal[0] = finalVal[0] & ~((1 << plane) - 1);
-        finalVal[1] = finalVal[1] & ~((1 << plane) - 1);
-        finalVal[2] = finalVal[2] & ~((1 << plane) - 1);
-
-        images[plane].at<cv::Vec3b>(i, j) = finalVal;
-      }
-    }
-    cv::imshow("Plane " + std::to_string(plane) + " displayed. From MSB to LSB", images[plane]);
-    std::cout << "ℹ️ Plane " << plane << " displayed. Press any key to continue." << std::endl;
-    cv::waitKey(0);
-    cv::destroyAllWindows();
-  }
-
-  std::cout << "\nℹ️ Finished displaying from MSB to LSB." << std::endl;
-  std::cout << "\n🎉 Bit planes separated successfully!" << std::endl;
+  std::cout << "\n🎉 Finished displaying bit planes." << std::endl;
 
   std::cout << "\n-------------------------------------------------------" << std::endl;
 }
