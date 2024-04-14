@@ -81,7 +81,7 @@ int main(int argc, char **argv)
 
     double avgDiffs = (diffR + diffG + diffB) / 3;
 
-    if (avgDiffs > 2.5)
+    if (avgDiffs > 1.75)
     {
       frame = drawRedBorder(frame);
       std::cout << "🚨 Motion detected! { id: " << motionCounter << ", avgDiffs: " << avgDiffs << " };" << std::endl;
